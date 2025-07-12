@@ -3,138 +3,128 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Malla Curricular - Educación Primaria</title>
+  <title>Malla Interactiva - Educación Primaria</title>
   <style>
     body {
       font-family: sans-serif;
-      background-color: #f5f5fa;
-      margin: 0;
+      background-color: #ffe6f0;
       padding: 20px;
+      margin: 0;
     }
     h1 {
       text-align: center;
-      color: #5a4e7c;
+      color: #c2185b;
     }
     .grid {
       display: flex;
       justify-content: center;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 20px;
     }
-    .year-column {
-      flex: 1;
-      min-width: 240px;
+    .column {
+      background-color: #fce4ec;
+      padding: 15px;
+      border-radius: 10px;
+      width: 260px;
     }
-    .year-title {
+    .column h2 {
       text-align: center;
-      font-weight: bold;
+      color: #880e4f;
       margin-bottom: 10px;
-      color: #3c3c3c;
     }
     .subject {
-      background-color: #cce5e5;
-      border-left: 6px solid #7ab8b8;
+      background-color: #f8bbd0;
       padding: 10px;
-      margin: 5px;
+      margin: 5px 0;
+      border-radius: 6px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      border-radius: 5px;
+      border-left: 6px solid #f06292;
+      transition: 0.3s;
     }
     .subject.disabled {
-      background-color: #e0e0e0;
+      background-color: #fce4ec;
       color: #999;
       cursor: not-allowed;
       border-left-color: #ccc;
     }
     .subject.unlocked {
-      background-color: #e6ccf5;
-      border-left-color: #ab8fd9;
+      background-color: #ce93d8;
+      border-left-color: #ab47bc;
     }
     .subject.approved {
-      background-color: #2e7d32;
+      background-color: #6a1b9a;
       color: white;
-      border-left-color: #1b5e20;
+      border-left-color: #4a148c;
       cursor: default;
     }
   </style>
 </head>
 <body>
-  <h1>Malla Curricular - Educación Primaria</h1>
+  <h1>Malla Interactiva - Educación Primaria</h1>
   <div class="grid">
-<div class="year-column">
-<div class="year-title">1º Año</div>
-<div class="subject" id="didactica_general" data-target="">Didáctica General</div>
-<div class="subject" id="historia_geo" data-target="">Historia y Geografía Argentina y Latinoamericana</div>
-<div class="subject" id="alfabetizacion" data-target="">Alfabetización Académica</div>
-<div class="subject" id="edi1" data-target="">EDI (1º Año)</div>
-<div class="subject" id="lengua" data-target="">Lengua, Literatura y su Enseñanza</div>
-<div class="subject" id="matematica" data-target="">Matemática y su Enseñanza</div>
-<div class="subject" id="naturales" data-target="">Ciencias Naturales y su Enseñanza</div>
-<div class="subject" id="sujetos" data-target="">Los Sujetos de la Educación Primaria</div>
-<div class="subject" id="pp1" data-target="pp2">Práctica Pedagógica I</div>
-</div>
-<div class="year-column">
-<div class="year-title">2º Año</div>
-<div class="subject" id="pedagogia" data-target="sociologia">Pedagogía</div>
-<div class="subject" id="histpol" data-target="cs_didactica">Historia y Política de la Educación Argentina</div>
-<div class="subject" id="psicologia" data-target="residencia">Psicología Educacional</div>
-<div class="subject" id="tic" data-target="">TIC y Educación</div>
-<div class="subject" id="didactica_lengua" data-target="alfabetizacion_inicial proyectos">Didáctica de la Lengua y la Literatura</div>
-<div class="subject" id="didactica_mate" data-target="taller_mate proyectos">Didáctica de la Matemática</div>
-<div class="subject" id="didactica_natu" data-target="taller_ciencias proyectos">Didáctica de las Ciencias Naturales</div>
-<div class="subject" id="didactica_prim" data-target="residencia">Didáctica del Nivel Primario</div>
-<div class="subject" id="cs_didactica" data-target="cs_didactica_ext">Ciencias Sociales y su Enseñanza</div>
-<div class="subject" id="pp2" data-target="pp3">Práctica Pedagógica II</div>
-</div>
-<div class="year-column">
-<div class="year-title">3º Año</div>
-<div class="subject" id="etica" data-target="">Formación Ética y Ciudadana</div>
-<div class="subject" id="esi" data-target="problematicas">Educación Sexual Integral</div>
-<div class="subject" id="inclusiva" data-target="residencia problematicas">Educación Inclusiva</div>
-<div class="subject" id="artes" data-target="proyectos">Lenguajes Artísticos</div>
-<div class="subject" id="alfabetizacion_inicial" data-target="">Alfabetización Inicial</div>
-<div class="subject" id="taller_mate" data-target="">Taller de Problemas Matemáticos</div>
-<div class="subject" id="taller_ciencias" data-target="">Taller de Alfabetización Científica</div>
-<div class="subject" id="cs_didactica_ext" data-target="">Didáctica de las Ciencias Sociales</div>
-<div class="subject" id="pp3" data-target="residencia">Práctica Pedagógica III</div>
-</div>
-<div class="year-column">
-<div class="year-title">4º Año</div>
-<div class="subject" id="sociologia" data-target="">Sociología de la Educación</div>
-<div class="subject" id="filosofia" data-target="">Filosofía de la Educación</div>
-<div class="subject" id="edi4" data-target="">EDI (4º Año)</div>
-<div class="subject" id="uco" data-target="">Unidad Curricular Optativa</div>
-<div class="subject" id="proyectos" data-target="residencia">Proyectos Integrados</div>
-<div class="subject" id="problematicas" data-target="">Problemáticas Contemporáneas</div>
-<div class="subject" id="residencia" data-target="">Residencia Pedagógica</div>
-</div>
+
+    <div class="column">
+      <h2>1º Año</h2>
+      <div class="subject" id="didactica_general" data-target="">Didáctica General</div>
+      <div class="subject" id="historia_geo" data-target="">Historia y Geografía Argentina y Latinoamericana</div>
+      <div class="subject" id="alfabetizacion" data-target="">Alfabetización Académica</div>
+      <div class="subject" id="edi1" data-target="">EDI (1º Año)</div>
+      <div class="subject" id="lengua" data-target="">Lengua, Literatura y su Enseñanza</div>
+      <div class="subject" id="matematica" data-target="">Matemática y su Enseñanza</div>
+      <div class="subject" id="naturales" data-target="">Ciencias Naturales y su Enseñanza</div>
+      <div class="subject" id="sujetos" data-target="">Los Sujetos de la Educación Primaria</div>
+      <div class="subject" id="pp1" data-target="pp2">Práctica Pedagógica I</div>
+    </div>
+
+    <div class="column">
+      <h2>2º Año</h2>
+      <div class="subject" id="pedagogia" data-target="sociologia">Pedagogía</div>
+      <div class="subject" id="histpol" data-target="cs_didactica_ext">Historia y Política de la Educación Argentina</div>
+      <div class="subject" id="psicologia" data-target="residencia">Psicología Educacional</div>
+      <div class="subject" id="tic" data-target="">TIC y Educación</div>
+      <div class="subject" id="didactica_lengua" data-target="alfabetizacion_inicial proyectos">Didáctica de la Lengua y la Literatura</div>
+      <div class="subject" id="didactica_mate" data-target="taller_mate proyectos">Didáctica de la Matemática</div>
+      <div class="subject" id="didactica_natu" data-target="taller_ciencias proyectos">Didáctica de las Ciencias Naturales</div>
+      <div class="subject" id="didactica_prim" data-target="residencia">Didáctica del Nivel Primario</div>
+      <div class="subject" id="cs_didactica" data-target="cs_didactica_ext">Ciencias Sociales y su Enseñanza</div>
+      <div class="subject" id="pp2" data-target="pp3">Práctica Pedagógica II</div>
+    </div>
+
+    <div class="column">
+      <h2>3º Año</h2>
+      <div class="subject" id="etica" data-target="">Formación Ética y Ciudadana</div>
+      <div class="subject" id="esi" data-target="problematicas">Educación Sexual Integral</div>
+      <div class="subject" id="inclusiva" data-target="residencia problematicas">Educación Inclusiva</div>
+      <div class="subject" id="artes" data-target="proyectos">Lenguajes Artísticos</div>
+      <div class="subject" id="alfabetizacion_inicial" data-target="">Alfabetización Inicial</div>
+      <div class="subject" id="taller_mate" data-target="">Taller de Problemas Matemáticos</div>
+      <div class="subject" id="taller_ciencias" data-target="">Taller de Alfabetización Científica</div>
+      <div class="subject" id="cs_didactica_ext" data-target="">Didáctica de las Ciencias Sociales</div>
+      <div class="subject" id="pp3" data-target="residencia">Práctica Pedagógica III</div>
+    </div>
+
+    <div class="column">
+      <h2>4º Año</h2>
+      <div class="subject" id="sociologia" data-target="">Sociología de la Educación</div>
+      <div class="subject" id="filosofia" data-target="">Filosofía de la Educación</div>
+      <div class="subject" id="edi4" data-target="">EDI (4º Año)</div>
+      <div class="subject" id="uco" data-target="">Unidad Curricular Optativa</div>
+      <div class="subject" id="proyectos" data-target="residencia">Proyectos Integrados</div>
+      <div class="subject" id="problematicas" data-target="">Problemáticas Contemporáneas</div>
+      <div class="subject" id="residencia" data-target="">Residencia Pedagógica</div>
+    </div>
 
   </div>
-  <script>
-    document.querySelectorAll('.subject').forEach(subject => {
-      subject.addEventListener('click', () => {
-        if (subject.classList.contains('disabled') || subject.classList.contains('approved')) return;
-        subject.classList.remove('unlocked');
-        subject.classList.add('approved');
-        const targets = subject.getAttribute('data-target');
-        if (targets) {
-          targets.split(' ').forEach(id => {
-            const el = document.getElementById(id);
-            if (el && el.classList.contains('disabled')) {
-              el.classList.remove('disabled');
-              el.classList.add('unlocked');
-            }
-          });
-        }
-      });
-    });
+
   
+
   <script>
     document.querySelectorAll('.subject').forEach(subject => {
       subject.addEventListener('click', () => {
         if (subject.classList.contains('approved')) return;
 
         subject.classList.remove('unlocked');
+        subject.classList.remove('disabled');
         subject.classList.add('approved');
 
         const targets = subject.getAttribute('data-target');
@@ -142,13 +132,14 @@
           targets.split(' ').forEach(id => {
             const el = document.getElementById(id);
             if (el && !el.classList.contains('approved')) {
-              el.classList.remove('disabled', 'unlocked');
-              el.classList.add('approved');
+              el.classList.remove('disabled');
+              el.classList.add('unlocked');
             }
           });
         }
       });
     });
   </script>
+
 </body>
 </html>
